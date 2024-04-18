@@ -21,9 +21,7 @@ export const App = () => {
   return (
     <main className="section container">
       <h1 className="title is-flex is-align-items-center">
-        {currentGood === ''
-          ? 'No goods selected'
-          : `${currentGood} is selected`}
+        {!currentGood ? 'No goods selected' : `${currentGood} is selected`}
         {currentGood && (
           <button
             onClick={() => {
@@ -44,6 +42,7 @@ export const App = () => {
                 currentGood === good ? 'has-background-success-light' : ''
               }
               data-cy="Good"
+              key={good}
             >
               {currentGood !== good ? (
                 <td>
